@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Doggie</string>
+    <string name="vertical_btn">VERTICAL</string>
+    <string name="horizontal_btn">HORIZONTAL</string>
+    <string name="grid_btn">GRID</string>
 </resources>
