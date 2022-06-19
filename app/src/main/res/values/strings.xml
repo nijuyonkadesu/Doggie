@@ -3,4 +3,16 @@
     <string name="vertical_btn">VERTICAL</string>
     <string name="horizontal_btn">HORIZONTAL</string>
     <string name="grid_btn">GRID</string>
+    <string name="d1">Tzeitel</string>
+    <string name="a1">7</string>
+    <string name="h1">sunbathing</string>
+    <string name="d2">Leroy</string>
+    <string name="a2">4</string>
+    <string name="h2">sleeping in dangerous places</string>
+    <string name="d3">Nox</string>
+    <string name="a3">8</string>
+    <string name="h3">meeting new animals</string>
+    <string name="d4">Faye</string>
+    <string name="a4">8</string>
+    <string name="h4">Digging in the garden</string>
 </resources>

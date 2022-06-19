@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Doggie">
         <activity
-            android:name=".VerticalList"
+            android:name=".VerticalListActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
