@@ -2,6 +2,9 @@ package com.njk.doggie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
+import com.njk.doggie.data.Datasource
+import com.njk.doggie.adapter.DogCardAdapter
 import com.njk.doggie.databinding.ActivityVerticalListBinding
 
 class VerticalListActivity : AppCompatActivity() {
@@ -12,6 +15,9 @@ class VerticalListActivity : AppCompatActivity() {
         binding = ActivityVerticalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // binding.button.apply { text = intent.getStringExtra(EXTRA_MESSAGE) }
-
+        val myDataset = Datasource().loadDogs()
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_vertical)
+        recyclerView.adapter = DogCardAdapter(this, myDataset)
+        recyclerView.setHasFixedSize(true)
     }
 }

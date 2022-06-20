@@ -3,11 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:orientation="vertical">
 
         <ImageView
@@ -26,12 +28,14 @@
             app:layout_constraintTop_toBottomOf="@+id/dog_name"
             app:layout_constraintLeft_toLeftOf="parent"
             android:id="@+id/dog_age"
+            tools:text="I'm fine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/dog_name"
             app:layout_constraintRight_toRightOf="parent"
             android:id="@+id/dog_hobby"
+            tools:text="I'm fine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         
