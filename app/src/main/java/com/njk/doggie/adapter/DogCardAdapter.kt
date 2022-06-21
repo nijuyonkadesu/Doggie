@@ -10,19 +10,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.njk.doggie.R
 import com.njk.doggie.model.Dog
 
-class DogCardAdapter(private val context: Context?, private val dataset: List<Dog>):
-    RecyclerView.Adapter<DogCardAdapter.DogViewHolder>(){
+class DogCardAdapter(
+    private val context: Context?,
+    private val dataset: List<Dog>,
+    private val layout: Int
+) :
+    RecyclerView.Adapter<DogCardAdapter.DogViewHolder>() {
 
-    class DogViewHolder(private val view: View):RecyclerView.ViewHolder(view){
-        val nameTextView: TextView = view.findViewById(R.id.dog_name)
+    class DogViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+        val nameTextView: TextView =
+            view.findViewById(R.id.dog_name) // just id's, have to populate values using onBindViewHolder
         val ageTextView: TextView = view.findViewById(R.id.dog_age)
         val hobbyTextView: TextView = view.findViewById(R.id.dog_hobby)
         val imageView: ImageView = view.findViewById(R.id.dog_pic)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.vertical_horizontal_list_item, parent, false)
-        return DogViewHolder(adapterLayout)
+        val adapterLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.vertical_horizontal_list_item, parent, false)
+        return DogViewHolder(adapterLayout) // control goes to line 16 | pass the view of freshly created layout, cached in DogViewHolder class
     }
 
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
@@ -32,5 +38,6 @@ class DogCardAdapter(private val context: Context?, private val dataset: List<Do
         holder.ageTextView.text = context?.resources?.getText(item.ageResourceId)
         holder.hobbyTextView.text = context?.resources?.getText(item.hobbyResourceId)
     }
+
     override fun getItemCount() = dataset.size
 }

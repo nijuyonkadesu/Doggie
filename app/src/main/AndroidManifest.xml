@@ -12,6 +12,12 @@
             android:name=".VerticalListActivity"
             android:exported="false" />
         <activity
+            android:name=".HorizontalListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GridListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

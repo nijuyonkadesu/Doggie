@@ -4,13 +4,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerticalListActivity">
+    tools:context=".HorizontalListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_vertical"
+        android:id="@+id/recycler_horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:scrollbars="vertical"
-        android:orientation="vertical"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_gravity="center"
         android:layout_height="match_parent"/>
 </FrameLayout>
