@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.njk.doggie.R
+import com.njk.doggie.const.Layout
 import com.njk.doggie.model.Dog
 
 class DogCardAdapter(
@@ -23,12 +24,20 @@ class DogCardAdapter(
         val ageTextView: TextView = view.findViewById(R.id.dog_age)
         val hobbyTextView: TextView = view.findViewById(R.id.dog_hobby)
         val imageView: ImageView = view.findViewById(R.id.dog_pic)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.vertical_horizontal_list_item, parent, false)
-        return DogViewHolder(adapterLayout) // control goes to line 16 | pass the view of freshly created layout, cached in DogViewHolder class
+
+        return if (layout == Layout.GRID) { // GRID
+            val adapterLayout = LayoutInflater.from(parent.context)
+                .inflate(R.layout.grid_list_item, parent, false)
+            DogViewHolder(adapterLayout) // control goes to line 20 | pass the view of freshly created layout, cached in DogViewHolder class
+        } else {
+            val adapterLayout = LayoutInflater.from(parent.context)
+                .inflate(R.layout.vertical_horizontal_list_item, parent, false)
+            DogViewHolder(adapterLayout) // similarly
+        }
     }
 
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
@@ -40,4 +49,5 @@ class DogCardAdapter(
     }
 
     override fun getItemCount() = dataset.size
+
 }

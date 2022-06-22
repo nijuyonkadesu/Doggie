@@ -15,7 +15,14 @@ class GridListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGridListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.recyclerGrid.adapter =
-            DogCardAdapter(this, Datasource().loadDogs(), Layout.GRID)
+            DogCardAdapter(
+                this,
+                Datasource().loadDogs(),
+                Layout.GRID
+            )
+        binding.recyclerGrid.setHasFixedSize(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

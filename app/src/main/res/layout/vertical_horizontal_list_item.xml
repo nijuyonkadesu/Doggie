@@ -21,18 +21,21 @@
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/dog_pic"
             android:id="@+id/dog_name"
+            style="@style/Widget.Doggie.TextViewHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/dog_name"
             app:layout_constraintLeft_toLeftOf="parent"
             android:id="@+id/dog_age"
+            style="@style/Widget.Doggie.TextView"
             tools:text="I'm fine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/dog_name"
             app:layout_constraintRight_toRightOf="parent"
+            style="@style/Widget.Doggie.TextView"
             android:id="@+id/dog_hobby"
             tools:text="I'm fine"
             android:layout_width="wrap_content"

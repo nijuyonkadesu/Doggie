@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Doggie.TextViewHeading" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?textAppearanceHeadline6</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+    <style name="Widget.Doggie.TextViewBodyGridAge" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+    <style name="Widget.Doggie.TextViewBodyGridHobby" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+    </style>
+    <style name="Widget.Doggie.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+</resources>
