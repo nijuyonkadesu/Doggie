@@ -44,8 +44,9 @@ class DogCardAdapter(
         val item = dataset[position]
         holder.imageView.setImageResource(item.imageResourceId)
         holder.nameTextView.text = context?.resources?.getText(item.nameResourceId)
-        holder.ageTextView.text = context?.resources?.getText(item.ageResourceId)
-        holder.hobbyTextView.text = context?.resources?.getText(item.hobbyResourceId)
+        //val age = context?.resources?.getText(R.string.dog_age, item.ageResourceId.toString()) - doesn't work
+        holder.ageTextView.text = (context?.getString(R.string.dog_age, context.resources.getText(item.ageResourceId).toString()))
+        holder.hobbyTextView.text = (context?.getString(R.string.dog_hobbies, context.resources.getText(item.hobbyResourceId).toString()))
     }
 
     override fun getItemCount() = dataset.size
