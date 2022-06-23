@@ -18,7 +18,7 @@ class DogCardAdapter(
 ) :
     RecyclerView.Adapter<DogCardAdapter.DogViewHolder>() {
 
-    class DogViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class DogViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameTextView: TextView =
             view.findViewById(R.id.dog_name) // just id's, have to populate values using onBindViewHolder
         val ageTextView: TextView = view.findViewById(R.id.dog_age)
