@@ -42,11 +42,13 @@ class DogCardAdapter(
 
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
         val item = dataset[position]
+        val resources = context?.resources
+
         holder.imageView.setImageResource(item.imageResourceId)
-        holder.nameTextView.text = context?.resources?.getText(item.nameResourceId)
+        holder.nameTextView.text = resources?.getText(item.nameResourceId)
         //val age = context?.resources?.getText(R.string.dog_age, item.ageResourceId.toString()) - doesn't work
-        holder.ageTextView.text = (context?.getString(R.string.dog_age, context.resources.getText(item.ageResourceId).toString()))
-        holder.hobbyTextView.text = (context?.getString(R.string.dog_hobbies, context.resources.getText(item.hobbyResourceId).toString()))
+        holder.ageTextView.text = (resources?.getString(R.string.dog_age, resources.getText(item.ageResourceId).toString()))
+        holder.hobbyTextView.text = (resources?.getString(R.string.dog_hobbies, resources.getText(item.hobbyResourceId).toString()))
     }
 
     override fun getItemCount() = dataset.size
