@@ -2,16 +2,25 @@ name: CI
 on:
   workflow_dispatch:
 jobs:
-  build:
+  build_release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v3
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Build the app
         run: ./gradlew assembleRelease
-      - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
-        env:
-         APP_FOLDER: app
-         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          release_name: ${{ env.RNAME }} (${{ env.AARCH }})
+          tag_name: ${{ env.TNAME }}${{ env.AARCH }}
+
+    env:
+      RNAME: Doggie
+      ANAME: Doggie.
+      TNAME: Git compiled
+      AARCH: arm
