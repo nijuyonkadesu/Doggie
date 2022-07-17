@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.RNAME }}_alpha
-          path: ${{ env.PATH }}
+          path: ${{ env.apk_path }}
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
 
@@ -32,4 +32,4 @@ jobs:
     env:
       RNAME: Doggie
       TNAME: action_build
-      PATH: app/build/outputs/apk/release
+      apk_path: app/build/outputs/apk/release
