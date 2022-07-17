@@ -18,6 +18,8 @@ jobs:
         with:
           release_name: ${{ env.RNAME }} (${{ env.AARCH }})
           tag_name: ${{ env.TNAME }}${{ env.AARCH }}
+        env:
+          GITHUB_TOKEN: ${{ github.TOKEN }}
 
     env:
       RNAME: Doggie
