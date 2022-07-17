@@ -24,5 +24,5 @@ jobs:
     env:
       RNAME: Doggie
       ANAME: Doggie.
-      TNAME: Git compiled
+      TNAME: Git_compiled
       AARCH: arm
