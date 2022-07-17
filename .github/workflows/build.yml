@@ -21,10 +21,13 @@ jobs:
           GITHUB_TOKEN: ${{ github.TOKEN }}
 
       - name: upload apk
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-asset@v1
         with:
           name: ${{ env.RNAME }}_alpha
-          path: ${{ env.apk_path }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.apk_path }}
+          asset_name: ${{ env.RNAME }}.apk
+          asset_content_type: application/gzip
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
 
@@ -32,4 +35,4 @@ jobs:
     env:
       RNAME: Doggie
       TNAME: action_build
-      apk_path: app/build/outputs/apk/release
+      apk_path: app/build/outputs/apk/release/
