@@ -14,15 +14,22 @@ jobs:
 
       - name: release
         uses: actions/create-release@v1
-        id: create_release
         with:
-          release_name: ${{ env.RNAME }} (${{ env.AARCH }})
-          tag_name: ${{ env.TNAME }}${{ env.AARCH }}
+          release_name: ${{ env.RNAME }}
+          tag_name: ${{ env.TNAME }}
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
 
+      - name: upload apk
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RNAME }}_alpha
+          path: ${{ env.PATH }}
+        env:
+          GITHUB_TOKEN: ${{ github.TOKEN }}
+
+
     env:
       RNAME: Doggie
-      ANAME: Doggie.
-      TNAME: Git_compiled
-      AARCH: arm
+      TNAME: action_build
+      PATH: app/build/outputs/apk/release
